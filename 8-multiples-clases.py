@@ -1,3 +1,7 @@
+"""
+Archivo python con clases y asociaciones
+"""
+
 # 1. Crear la clase
 class Movie:
     # Atributos de clase
