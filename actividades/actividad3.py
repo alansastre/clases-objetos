@@ -128,7 +128,7 @@ class Dimension:
 
 # ------------------------------  AROA --------------------------------------------
 class Product:
-    def __init__(self, id, sku, name, description, color, price, dimension, digital):
+    def __init__(self, id, sku, name, description, color, price, dimension, digital, offer):
         self.id = id
         self.sku = sku
         self.name = name
@@ -137,6 +137,7 @@ class Product:
         self.price = price
         self.dimension = dimension
         self.digital = digital
+        self.offer = offer
 
  # nuevo
     def __str__(self):
@@ -149,6 +150,7 @@ class Product:
                 f"price= {self.price}, " \
                 f"dimension= {self.dimension}, " \
                 f"digital= {self.digital}, " \
+                f"offer= {self.offer}" \
                 f")"
 
     def __repr__(self):
