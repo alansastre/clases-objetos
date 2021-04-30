@@ -283,3 +283,26 @@ cards2 = [visa1, visa2]
 print("=========Cliente1===============")
 cliente1 = Customer(1, "Carlos", "López", "00000002E", datetime.date(1950, 1, 31), "Calle Falsa", [visa1, visa2])
 print(cliente1)
+
+class Store:
+    def __init__(self, id, name, products, customers, street, country):
+        self.id = id
+        self.name = name
+        self.products = products
+        self.customers = customers
+        self.street = street
+        self.country = country
+
+    def datos(self):
+        print("Tienda " + str(self.id))
+        print("Nombre: " + self.name)
+        print("Ciudad: " + self.country)
+        print("Dirección: " + self.street.country)
+
+dim=Dimension(1,1.23,0.83,True)
+producto=Product(1,392,"Lavavajillas","Limpia platos, cubiertos, etc.","blanco",300,dim,True,"60% de descuento")
+dire1=Direction(1,"Calle Muñor Torrero",11100,"Cádiz","San Fernando")
+dire2=Direction(2,"Calle Carolina 27",20193,"VillaNorte","Salamanca")
+cliente=Customer(1,"Paco","Maestre",23450293,datetime.datetime(1990,3,17),dire1)
+tienda = Store(1, "Coviran", producto, cliente, dire2, "San Fernando")
+tienda.datos()
