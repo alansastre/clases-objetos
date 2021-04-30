@@ -115,12 +115,12 @@ class Customer:
         self.direction = direction
 
 # TODO - ArielisGT
-        def __str__(self):
-            """
+    def __str__(self):
+        """
             Método especial para obtener una representación textual del objeto
-            :return:
-            """
-            return f"Customer(id={self.id}, " \
+        :return:
+        """
+        return f"Customer(id={self.id}, " \
                    f"first_name= {self.first_name}, " \
                    f"last_name= {self.last_name}, " \
                    f"nif= {self.nif}, " \
@@ -129,8 +129,8 @@ class Customer:
                    f"direction= {self.direction}, " \
                    f")"
 
-        def __repr__(self):
-            return self.__str__()
+    def __repr__(self):
+        return self.__str__()
 
 
 class Direction:
