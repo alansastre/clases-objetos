@@ -88,7 +88,7 @@ class Dimension:
         return self.__str__()
 
 
-
+# ------------------------------  AROA --------------------------------------------
 class Product:
     def __init__(self, id, sku, name, description, color, price, dimension, digital):
         self.id = id
@@ -101,19 +101,23 @@ class Product:
         self.digital = digital
 
  # nuevo
-def __str__(self):
+    def __str__(self):
 
-    return f"product(id{self.id}, " \
-           f"sku= {self.sku}, " \
-           f"name= {self.name}, " \
-           f"description= {self.description}, " \
-           f"color= {self.color}, " \
-           f"price= {self.price}, " \
-           f"dimension= {self.dimension}, " \
-           f"digital= {self.digital}, " \
-           f")"
+            return f"product(id{self.id}, " \
+                f"sku= {self.sku}, " \
+                f"name= {self.name}, " \
+                f"description= {self.description}, " \
+                f"color= {self.color}, " \
+                f"price= {self.price}, " \
+                f"dimension= {self.dimension}, " \
+                f"digital= {self.digital}, " \
+                f")"
 
-        # TODO - Aroita
+    def __repr__(self):
+        return self.__str__()
+
+
+# TODO - Aroita  ----------------------------------------------------------------
 
 
 class Customer:
