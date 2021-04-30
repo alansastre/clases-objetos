@@ -76,6 +76,7 @@ class ShopCart:
                 f"products= {self.product}, " \
                 f"customer= {self.customer}, " \
                 f"creation_date= {self.creation_date}, " \
+                f")"
 
     def __repr__(self):
         return self.__str__()
