@@ -76,6 +76,8 @@ class Dimension:
         self.weight = weight
         self.fragile = fragile
 
+        # TODO - DanielPerezRos
+
 
 class Product:
     def __init__(self, id, sku, name, description, color, price, dimension, digital):
@@ -88,6 +90,8 @@ class Product:
         self.dimension = dimension
         self.digital = digital
 
+        # TODO - Aroita
+
 
 class Customer:
     def __init__(self, id, first_name, last_name, nif, birth_date, direction):
@@ -99,6 +103,8 @@ class Customer:
         self.creation_date = datetime.datetime.now()
         self.direction = direction
 
+        # TODO - ArielisGT
+
 
 class Direction:
     def __init__(self, id, street, postal_code, province, country):
@@ -108,6 +114,9 @@ class Direction:
         self.province = province
         self.country = country
 
+        # TODO - Alexander
+
 
 # Asociaciones
 
+# TODO - Crear Direction y customer y asociarlos - Evaristo
