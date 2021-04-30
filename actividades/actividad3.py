@@ -313,9 +313,9 @@ productos = Product(1,
 print(productos)
 
 dim=Dimension(1,1.25,0.83,True)
-producto=Product(1,392,"Lavavajillas","Limpia platos, cubiertos, etc.","blanco",300,dim,True,"60% de descuento")
+producto=Product(1,392,"Lavavajillas","Limpia platos, cubiertos, etc.","blanco",300,dim,True,"Limpieza","60% de descuento")
 dire1=Direction(1,"Calle Muñor Torrero",11100,"Cádiz","San Fernando")
-dire2=Direction(2,"Calle Carolina 27",20193,"VillaNorte","Salamanca")
+dire2=Direction(2,"Calle Carolina 27",20193,"VillaNorte","Salamanca",visa1)
 cliente=Customer(1,"Paco","Maestre",23450293,datetime.datetime(1990,3,17),dire1)
 tienda = Store(1, "Coviran", producto, cliente, dire2, "San Fernando")
 tienda.datos()
