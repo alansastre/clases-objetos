@@ -59,11 +59,31 @@ TODO - class Order: id, customer, shopcart, creation_date  - salasPMJ
 TODO - class Category: id, name, color, creation_date  -- Ariel
 TODO - Añadir el atributo category a la clase Product y crear objetos y asociarlos  -- Ariel
 TODO - Dani Perez - En la clase customer añadir un atributo lista para objetos de la clase CreditCard. Probar a crear objetos y asociarlos
-
+class Offer - id, name, init_date, finish_date, discount - @alansastre
 """
 import datetime
 
+
 # Creación de clases:
+class Offer:
+    def __init__(self, id, name, init_date, finish_date, discount):
+        self.id = id
+        self.name = name
+        self.init_date = init_date
+        self.finish_date = finish_date
+        self.creation_date = datetime.datetime.now()
+        self.discount = discount
+
+    def __str__(self):
+        return f"Offer(id={self.id}, " \
+                f"name= {self.name}, " \
+                f"init_date= {self.init_date}, " \
+                f"finish_date= {self.finish_date}, " \
+                f"discount= {self.discount}" \
+                f")"
+
+    def __repr__(self):
+        return self.__str__()
 
 class ShopCart:
 
