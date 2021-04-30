@@ -108,6 +108,17 @@ class Direction:
         self.province = province
         self.country = country
 
+    def __str__(self):
+        return f'Direction(' \
+               f'id={self.id}, ' \
+               f'street={self.street}, ' \
+               f'postal_code={self.postal_code}, ' \
+               f'province={self.province}, ' \
+               f'country={self.country})'
+
+    def __repr__(self):
+        return self.__str__()
+
 
 # Asociaciones
 
