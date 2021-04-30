@@ -76,11 +76,21 @@ class Dimension:
         self.weight = weight
         self.fragile = fragile
 
-        # TODO - DanielPerezRos
+    def __str__(self):
+        return f"Dimension(id={self.id}, " \
+               f"height= {self.height}, " \
+               f"width= {self.width}, " \
+               f"weight= {self.weight}, " \
+               f"fragile= {self.fragile}" \
+               f")"
+
+    def __repr__(self):
+        return self.__str__()
+
 
 
 class Product:
-    def __init__(self, id, sku, name, description, color, price, dimension, digital):
+    def __init__(self, id, sku, name, description, color, price, dimension, digital, peso):
         self.id = id
         self.sku = sku
         self.name = name
@@ -89,6 +99,7 @@ class Product:
         self.price = price
         self.dimension = dimension
         self.digital = digital
+        self.peso = peso     # nuevo
 
         # TODO - Aroita
 
@@ -130,7 +141,16 @@ class Direction:
         self.province = province
         self.country = country
 
-        # TODO - Alexander
+    def __str__(self):
+        return f'Direction(' \
+               f'id={self.id}, ' \
+               f'street={self.street}, ' \
+               f'postal_code={self.postal_code}, ' \
+               f'province={self.province}, ' \
+               f'country={self.country})'
+
+    def __repr__(self):
+        return self.__str__()
 
 
 # Asociaciones
