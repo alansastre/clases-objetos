@@ -76,7 +76,17 @@ class Dimension:
         self.weight = weight
         self.fragile = fragile
 
-        # TODO - DanielPerezRos
+    def __str__(self):
+        return f"Dimension(id={self.id}, " \
+               f"height= {self.height}, " \
+               f"width= {self.width}, " \
+               f"weight= {self.weight}, " \
+               f"fragile= {self.fragile}" \
+               f")"
+
+    def __repr__(self):
+        return self.__str__()
+
 
 
 class Product:
