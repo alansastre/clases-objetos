@@ -184,6 +184,7 @@ class Customer:
                    f"birth_date= {self.birth_date}, " \
                    f"creation_date= {self.creation_date}, " \
                    f"direction= {self.direction}, " \
+                   f"cards= {self.cards} " \
                    f")"
 
     def __repr__(self):
@@ -245,8 +246,10 @@ class CreditCard:
         return self.__str__()
 
 visa1 = CreditCard(1, "Carlos López", "0001 0002 0003 4444", datetime.date(2022, 1, 31), 554)
-visa2 = CreditCard(2, "Manuel Pérez", "0001 0002 0003 5555", datetime.date(2024, 12, 15), 554)
+visa2 = CreditCard(2, "Carlos López", "0001 0002 0003 5555", datetime.date(2024, 12, 15), 555)
 cards2 = [visa1, visa2]
+print("=========Cards2===============")
+print(cards2)
 print("=========Cliente1===============")
 cliente1 = Customer(1, "Carlos", "López", "00000002E", datetime.date(1950, 1, 31), "Calle Falsa", [visa1, visa2])
 print(cliente1)
