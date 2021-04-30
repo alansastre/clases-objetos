@@ -299,7 +299,7 @@ class Store:
         print("Ciudad: " + self.country)
         print("Dirección: " + self.street.country)
 
-dim=Dimension(1,1.23,0.83,True)
+dim=Dimension(1,1.25,0.83,True)
 producto=Product(1,392,"Lavavajillas","Limpia platos, cubiertos, etc.","blanco",300,dim,True,"60% de descuento")
 dire1=Direction(1,"Calle Muñor Torrero",11100,"Cádiz","San Fernando")
 dire2=Direction(2,"Calle Carolina 27",20193,"VillaNorte","Salamanca")
