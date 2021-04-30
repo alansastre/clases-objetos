@@ -53,16 +53,37 @@ cual presentaremos por consola.
 
 Para una correcta visualización a través de la consola implementaremos el método string en cada una de las clases.
 
-TODO - class CreditCard: id, titular, numero, fecha expiracion, ccv -- Dani Perez
-TODO - class Store: id, name, products   -
+class CreditCard: id, titular, numero, fecha expiracion, ccv -- Dani Perez
+TODO - class Store: id, name, products, customers, street, country   -  Dani
 TODO - class Order: id, customer, shopcart, creation_date  - salasPMJ
-
-
+TODO - class Category: id, name, color, creation_date  -- Ariel
+TODO - Añadir el atributo category a la clase Product y crear objetos y asociarlos  -- Ariel
+TODO - Dani Perez - En la clase customer añadir un atributo lista para objetos de la clase CreditCard. Probar a crear objetos y asociarlos
+class Offer - id, name, init_date, finish_date, discount - @alansastre
 """
 import datetime
 
 
 # Creación de clases:
+class Offer:
+    def __init__(self, id, name, init_date, finish_date, discount):
+        self.id = id
+        self.name = name
+        self.init_date = init_date
+        self.finish_date = finish_date
+        self.creation_date = datetime.datetime.now()
+        self.discount = discount
+
+    def __str__(self):
+        return f"Offer(id={self.id}, " \
+                f"name= {self.name}, " \
+                f"init_date= {self.init_date}, " \
+                f"finish_date= {self.finish_date}, " \
+                f"discount= {self.discount}" \
+                f")"
+
+    def __repr__(self):
+        return self.__str__()
 
 class ShopCart:
 
@@ -74,10 +95,11 @@ class ShopCart:
 
     def __str__(self):
         return f"ShopCart(id={self.id}, " \
-               f"products= {self.product}, " \
-               f"customer= {self.customer}, " \
-               f"creation_date= {self.creation_date}, " \
- \
+                f"products= {self.product}, " \
+                f"customer= {self.customer}, " \
+                f"creation_date= {self.creation_date}, " \
+                f")"
+
     def __repr__(self):
         return self.__str__()
 
@@ -104,10 +126,9 @@ class Dimension:
         return self.__str__()
 
 
+# ------------------------------  AROA --------------------------------------------
 class Product:
-    category_offers = "Last Offers"
-
-    def __init__(self, id, sku, name, description, color, price, dimension, digital, category):
+    def __init__(self, id, sku, name, description, color, price, dimension, digital):
         self.id = id
         self.sku = sku
         self.name = name
@@ -116,42 +137,25 @@ class Product:
         self.price = price
         self.dimension = dimension
         self.digital = digital
-        self.category = category
 
-
-# nuevo
-def __str__(self):
-    return f"product(id{self.id}, " \
-           f"sku= {self.sku}, " \
-           f"name= {self.name}, " \
-           f"description= {self.description}, " \
-           f"color= {self.color}, " \
-           f"price= {self.price}, " \
-           f"dimension= {self.dimension}, " \
-           f"digital= {self.digital}, " \
-           f")"
-
-    # TODO - Aroita
-
-
-# TODO - class Category: id, name, color, creation_date  -- Ariel
-
-class Category:
-    def __init__(self, id, name, color, creation_date):
-        self.id = id
-        self.name = name
-        self.color = color
-        self.creation_date = datetime.datetime.now()
-
+ # nuevo
     def __str__(self):
-        return f"Category(id={self.id}, " \
-               f"name= {self.name}, " \
-               f"color= {self.color}, " \
-               f"creation_date= {self.creation_date}, " \
-               f")"
+
+            return f"product(id{self.id}, " \
+                f"sku= {self.sku}, " \
+                f"name= {self.name}, " \
+                f"description= {self.description}, " \
+                f"color= {self.color}, " \
+                f"price= {self.price}, " \
+                f"dimension= {self.dimension}, " \
+                f"digital= {self.digital}, " \
+                f")"
 
     def __repr__(self):
         return self.__str__()
+
+
+# TODO - Aroita  ----------------------------------------------------------------
 
 
 class Customer:
@@ -164,20 +168,20 @@ class Customer:
         self.creation_date = datetime.datetime.now()
         self.direction = direction
 
-    # TODO - ArielisGT
+# TODO - ArielisGT
     def __str__(self):
         """
             Método especial para obtener una representación textual del objeto
         :return:
         """
         return f"Customer(id={self.id}, " \
-               f"first_name= {self.first_name}, " \
-               f"last_name= {self.last_name}, " \
-               f"nif= {self.nif}, " \
-               f"birth_date= {self.birth_date}, " \
-               f"creation_date= {self.creation_date}, " \
-               f"direction= {self.direction}, " \
-               f")"
+                   f"first_name= {self.first_name}, " \
+                   f"last_name= {self.last_name}, " \
+                   f"nif= {self.nif}, " \
+                   f"birth_date= {self.birth_date}, " \
+                   f"creation_date= {self.creation_date}, " \
+                   f"direction= {self.direction}, " \
+                   f")"
 
     def __repr__(self):
         return self.__str__()
@@ -205,9 +209,12 @@ class Direction:
 
 # Asociaciones
 
-# TODO - Crear Direction y customer y asociarlos - Evaristo
+# Crear Direction y customer y asociarlos - Evaristo
+fecha_nacimiento = datetime.date(1970, 12, 1)
 direccion_jose = Direction(1, 'luna', 28100, 'Alcobendas', 'España')
-jose = Customer(1, 'Jose', 'Perez', '7777777B', '1970-12-1', direccion_jose)
+jose = Customer(1, 'Jose', 'Perez', '7777777B', fecha_nacimiento, direccion_jose)
+print(direccion_jose)
+print(jose)
 
 
 # TODO - Crear 3 Dimension y 3 Product y asociarlos
@@ -233,16 +240,3 @@ class CreditCard:
 
     def __repr__(self):
         return self.__str__()
-
-
-# TODO - Añadir el atributo category a la clase Product y crear objetos y asociarlos  -- Ariel
-#     class Category:
-#         def __init__(self, id, name, color, creation_date):
-#             self.id = id
-#             self.name = name
-#             self.color = color
-#             self.creation_date = creation_date
-
-category_offers = (1, "Offers", "red", datetime.date.now())
-category_books = (2, "Books", "white", datetime.date.now())
-category_computers= (3, "Computers", "green", datetime.date.now())
