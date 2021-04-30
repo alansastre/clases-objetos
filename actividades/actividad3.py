@@ -65,6 +65,15 @@ class ShopCart:
         self.customer = customer
         self.creation_date = datetime.datetime.now()
 
+    def __str__(self):
+        return f"ShopCart(id={self.id}, " \
+                f"products= {self.product}, " \
+                f"customer= {self.customer}, " \
+                f"creation_date= {self.creation_date}, " \
+
+    def __repr__(self):
+        return self.__str__()
+
         # TODO - @Leticia-Orive
 
 
