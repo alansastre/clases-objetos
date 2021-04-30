@@ -76,7 +76,17 @@ class Dimension:
         self.weight = weight
         self.fragile = fragile
 
-        # TODO - DanielPerezRos
+    def __str__(self):
+        return f"Dimension(id={self.id}, " \
+               f"height= {self.height}, " \
+               f"width= {self.width}, " \
+               f"weight= {self.weight}, " \
+               f"fragile= {self.fragile}" \
+               f")"
+
+    def __repr__(self):
+        return self.__str__()
+
 
 
 class Product:
@@ -116,7 +126,23 @@ class Customer:
         self.creation_date = datetime.datetime.now()
         self.direction = direction
 
-        # TODO - ArielisGT
+# TODO - ArielisGT
+        def __str__(self):
+            """
+            Método especial para obtener una representación textual del objeto
+            :return:
+            """
+            return f"Customer(id={self.id}, " \
+                   f"first_name= {self.first_name}, " \
+                   f"last_name= {self.last_name}, " \
+                   f"nif= {self.nif}, " \
+                   f"birth_date= {self.birth_date}, " \
+                   f"creation_date= {self.creation_date}, " \
+                   f"direction= {self.direction}, " \
+                   f")"
+
+        def __repr__(self):
+            return self.__str__()
 
 
 class Direction:
@@ -127,12 +153,24 @@ class Direction:
         self.province = province
         self.country = country
 
-        # TODO - Alexander
+    def __str__(self):
+        return f'Direction(' \
+               f'id={self.id}, ' \
+               f'street={self.street}, ' \
+               f'postal_code={self.postal_code}, ' \
+               f'province={self.province}, ' \
+               f'country={self.country})'
+
+    def __repr__(self):
+        return self.__str__()
 
 
 # Asociaciones
 
 # TODO - Crear Direction y customer y asociarlos - Evaristo
+direccion_jose = Direction(1, 'luna', 28100, 'Alcobendas', 'España')
+jose = Customer(1, 'Jose', 'Perez', '7777777B', '1970-12-1', direccion_jose)
+
 
 # TODO - Crear 3 Dimension y 3 Product y asociarlos
 
