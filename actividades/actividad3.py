@@ -191,5 +191,5 @@ class Store:
         print("Ciudad: " + self.country)
         print("Dirección: " + self.street.country)
 
-tienda = Store(1, "Coviran", producto, cliente, dire2, "San Fernando")
+tienda = Store(2, "Coviran", producto, cliente, dire2, "San Fernando")
 tienda.datos()
