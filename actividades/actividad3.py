@@ -181,3 +181,6 @@ jose = Customer(1, 'Jose', 'Perez', '7777777B', '1970-12-1', direccion_jose)
 # TODO - Crear 3 Dimension y 3 Product y asociarlos
 
 # TODO - Crear lista de productos a partir de los 3 productos anteriores y crear ShopCart con esa lista de productos
+
+
+# PARA MÍ VAIS A TODA LECHE   !!!
