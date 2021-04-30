@@ -90,7 +90,7 @@ class Dimension:
 
 
 class Product:
-    def __init__(self, id, sku, name, description, color, price, dimension, digital):
+    def __init__(self, id, sku, name, description, color, price, dimension, digital, peso):
         self.id = id
         self.sku = sku
         self.name = name
@@ -99,6 +99,7 @@ class Product:
         self.price = price
         self.dimension = dimension
         self.digital = digital
+        self.peso = peso     # nuevo
 
         # TODO - Aroita
 
@@ -124,9 +125,22 @@ class Direction:
         self.province = province
         self.country = country
 
-        # TODO - Alexander
+    def __str__(self):
+        return f'Direction(' \
+               f'id={self.id}, ' \
+               f'street={self.street}, ' \
+               f'postal_code={self.postal_code}, ' \
+               f'province={self.province}, ' \
+               f'country={self.country})'
+
+    def __repr__(self):
+        return self.__str__()
 
 
 # Asociaciones
 
 # TODO - Crear Direction y customer y asociarlos - Evaristo
+
+# TODO - Crear 3 Dimension y 3 Product y asociarlos
+
+# TODO - Crear lista de productos a partir de los 3 productos anteriores y crear ShopCart con esa lista de productos
