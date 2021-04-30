@@ -128,7 +128,8 @@ class Dimension:
 
 # ------------------------------  AROA --------------------------------------------
 class Product:
-    def __init__(self, id, sku, name, description, color, price, dimension, digital, offer):
+
+    def __init__(self, id, sku, name, description, color, price, dimension, digital, category, offer):
         self.id = id
         self.sku = sku
         self.name = name
@@ -137,21 +138,40 @@ class Product:
         self.price = price
         self.dimension = dimension
         self.digital = digital
+        self.category = category
         self.offer = offer
 
- # nuevo
     def __str__(self):
+        return f"product(id{self.id}, " \
+            f"sku= {self.sku}, " \
+            f"name= {self.name}, " \
+            f"description= {self.description}, " \
+            f"color= {self.color}, " \
+            f"price= {self.price}, " \
+            f"dimension= {self.dimension}, " \
+            f"digital= {self.digital}, " \
+            f"category= {self.category}" \
+            f"offer= {self.offer}" \
+            f")"
 
-            return f"product(id{self.id}, " \
-                f"sku= {self.sku}, " \
-                f"name= {self.name}, " \
-                f"description= {self.description}, " \
-                f"color= {self.color}, " \
-                f"price= {self.price}, " \
-                f"dimension= {self.dimension}, " \
-                f"digital= {self.digital}, " \
-                f"offer= {self.offer}" \
-                f")"
+    # TODO - Aroita
+
+
+# TODO - class Category: id, name, color, creation_date  -- Ariel
+
+class Category:
+    def __init__(self, id, name, color, creation_date):
+        self.id = id
+        self.name = name
+        self.color = color
+        self.creation_date = creation_date
+
+    def __str__(self):
+        return f"Category(id={self.id}, " \
+               f"name= {self.name}, " \
+               f"color= {self.color}, " \
+               f"creation_date= {self.creation_date}, " \
+               f")"
 
     def __repr__(self):
         return self.__str__()
@@ -161,7 +181,7 @@ class Product:
 
 
 class Customer:
-    def __init__(self, id, first_name, last_name, nif, birth_date, direction):
+    def __init__(self, id, first_name, last_name, nif, birth_date, direction, cards):
         self.id = id
         self.first_name = first_name
         self.last_name = last_name
@@ -169,6 +189,7 @@ class Customer:
         self.birth_date = birth_date
         self.creation_date = datetime.datetime.now()
         self.direction = direction
+        self.cards = cards
 
 # TODO - ArielisGT
     def __str__(self):
@@ -183,6 +204,7 @@ class Customer:
                    f"birth_date= {self.birth_date}, " \
                    f"creation_date= {self.creation_date}, " \
                    f"direction= {self.direction}, " \
+                   f"cards= {self.cards} " \
                    f")"
 
     def __repr__(self):
@@ -214,7 +236,8 @@ class Direction:
 # Crear Direction y customer y asociarlos - Evaristo
 fecha_nacimiento = datetime.date(1970, 12, 1)
 direccion_jose = Direction(1, 'luna', 28100, 'Alcobendas', 'España')
-jose = Customer(1, 'Jose', 'Perez', '7777777B', fecha_nacimiento, direccion_jose)
+cards1 = []
+jose = Customer(1, 'Jose', 'Perez', '7777777B', fecha_nacimiento, direccion_jose, cards1)
 print(direccion_jose)
 print(jose)
 
@@ -224,7 +247,6 @@ print(jose)
 # TODO - Crear lista de productos a partir de los 3 productos anteriores y crear ShopCart con esa lista de productos
 
 class CreditCard:
-
     def __init__(self, id, titular, number, expiration_date, ccv):
         self.id = id
         self.titular = titular
@@ -242,3 +264,25 @@ class CreditCard:
 
     def __repr__(self):
         return self.__str__()
+
+
+# TODO - Añadir el atributo category a la clase Product y crear objetos y asociarlos  -- Ariel
+#     class Category:
+#         def __init__(self, id, name, color, creation_date):
+#             self.id = id
+#             self.name = name
+#             self.color = color
+#             self.creation_date = creation_date
+
+category_books = Category(1, "Books", "white", datetime.date.today())
+category_computers = Category(2, "Computers", "green", datetime.date.today())
+
+
+visa1 = CreditCard(1, "Carlos López", "0001 0002 0003 4444", datetime.date(2022, 1, 31), 554)
+visa2 = CreditCard(2, "Carlos López", "0001 0002 0003 5555", datetime.date(2024, 12, 15), 555)
+cards2 = [visa1, visa2]
+print("=========Cards2===============")
+print(cards2)
+print("=========Cliente1===============")
+cliente1 = Customer(1, "Carlos", "López", "00000002E", datetime.date(1950, 1, 31), "Calle Falsa", [visa1, visa2])
+print(cliente1)
