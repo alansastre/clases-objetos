@@ -53,12 +53,12 @@ cual presentaremos por consola.
 
 Para una correcta visualización a través de la consola implementaremos el método string en cada una de las clases.
 
-TODO - class CreditCard: id, titular, numero, fecha expiracion, ccv -- Dani Perez
-TODO - class Store: id, name, products   -
+class CreditCard: id, titular, numero, fecha expiracion, ccv -- Dani Perez
+TODO - class Store: id, name, products, customers, street, country   -  Dani
 TODO - class Order: id, customer, shopcart, creation_date  - salasPMJ
 TODO - class Category: id, name, color, creation_date  -- Ariel
 TODO - Añadir el atributo category a la clase Product y crear objetos y asociarlos  -- Ariel
-
+TODO - Dani Perez - En la clase customer añadir un atributo lista para objetos de la clase CreditCard. Probar a crear objetos y asociarlos
 
 """
 import datetime
