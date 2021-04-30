@@ -53,15 +53,37 @@ cual presentaremos por consola.
 
 Para una correcta visualización a través de la consola implementaremos el método string en cada una de las clases.
 
-TODO - class CreditCard: id, titular, numero, fecha expiracion, ccv -- Dani Perez
-TODO - class Store: id, name, products   -
+class CreditCard: id, titular, numero, fecha expiracion, ccv -- Dani Perez
+TODO - class Store: id, name, products, customers, street, country   -  Dani
 TODO - class Order: id, customer, shopcart, creation_date  - salasPMJ
-TODO - class Category: id, name  --
-
+TODO - class Category: id, name, color, creation_date  -- Ariel
+TODO - Añadir el atributo category a la clase Product y crear objetos y asociarlos  -- Ariel
+TODO - Dani Perez - En la clase customer añadir un atributo lista para objetos de la clase CreditCard. Probar a crear objetos y asociarlos
+class Offer - id, name, init_date, finish_date, discount - @alansastre
 """
 import datetime
 
+
 # Creación de clases:
+class Offer:
+    def __init__(self, id, name, init_date, finish_date, discount):
+        self.id = id
+        self.name = name
+        self.init_date = init_date
+        self.finish_date = finish_date
+        self.creation_date = datetime.datetime.now()
+        self.discount = discount
+
+    def __str__(self):
+        return f"Offer(id={self.id}, " \
+                f"name= {self.name}, " \
+                f"init_date= {self.init_date}, " \
+                f"finish_date= {self.finish_date}, " \
+                f"discount= {self.discount}" \
+                f")"
+
+    def __repr__(self):
+        return self.__str__()
 
 class ShopCart:
 
@@ -70,6 +92,16 @@ class ShopCart:
         self.product = products
         self.customer = customer
         self.creation_date = datetime.datetime.now()
+
+    def __str__(self):
+        return f"ShopCart(id={self.id}, " \
+                f"products= {self.product}, " \
+                f"customer= {self.customer}, " \
+                f"creation_date= {self.creation_date}, " \
+                f")"
+
+    def __repr__(self):
+        return self.__str__()
 
         # TODO - @Leticia-Orive
 
@@ -94,9 +126,9 @@ class Dimension:
         return self.__str__()
 
 
-
+# ------------------------------  AROA --------------------------------------------
 class Product:
-    def __init__(self, id, sku, name, description, color, price, dimension, digital):
+    def __init__(self, id, sku, name, description, color, price, dimension, digital, offer):
         self.id = id
         self.sku = sku
         self.name = name
@@ -105,21 +137,27 @@ class Product:
         self.price = price
         self.dimension = dimension
         self.digital = digital
+        self.offer = offer
 
  # nuevo
-def __str__(self):
+    def __str__(self):
 
-    return f"product(id{self.id}, " \
-           f"sku= {self.sku}, " \
-           f"name= {self.name}, " \
-           f"description= {self.description}, " \
-           f"color= {self.color}, " \
-           f"price= {self.price}, " \
-           f"dimension= {self.dimension}, " \
-           f"digital= {self.digital}, " \
-           f")"
+            return f"product(id{self.id}, " \
+                f"sku= {self.sku}, " \
+                f"name= {self.name}, " \
+                f"description= {self.description}, " \
+                f"color= {self.color}, " \
+                f"price= {self.price}, " \
+                f"dimension= {self.dimension}, " \
+                f"digital= {self.digital}, " \
+                f"offer= {self.offer}" \
+                f")"
 
-        # TODO - Aroita
+    def __repr__(self):
+        return self.__str__()
+
+
+# TODO - Aroita  ----------------------------------------------------------------
 
 
 class Customer:
@@ -173,11 +211,34 @@ class Direction:
 
 # Asociaciones
 
-# TODO - Crear Direction y customer y asociarlos - Evaristo
+# Crear Direction y customer y asociarlos - Evaristo
+fecha_nacimiento = datetime.date(1970, 12, 1)
 direccion_jose = Direction(1, 'luna', 28100, 'Alcobendas', 'España')
-jose = Customer(1, 'Jose', 'Perez', '7777777B', '1970-12-1', direccion_jose)
+jose = Customer(1, 'Jose', 'Perez', '7777777B', fecha_nacimiento, direccion_jose)
+print(direccion_jose)
+print(jose)
 
 
 # TODO - Crear 3 Dimension y 3 Product y asociarlos
 
 # TODO - Crear lista de productos a partir de los 3 productos anteriores y crear ShopCart con esa lista de productos
+
+class CreditCard:
+
+    def __init__(self, id, titular, number, expiration_date, ccv):
+        self.id = id
+        self.titular = titular
+        self.number = number
+        self.expiration_date = expiration_date
+        self.ccv = ccv
+
+    def __str__(self):
+        return f"CreditCard(id={self.id}, " \
+               f"titular= {self.titular}, " \
+               f"number= {self.number}, " \
+               f"expiration_date= {self.expiration_date}, " \
+               f"ccv= {self.ccv}" \
+               f")"
+
+    def __repr__(self):
+        return self.__str__()
