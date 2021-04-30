@@ -161,7 +161,7 @@ class Product:
 
 
 class Customer:
-    def __init__(self, id, first_name, last_name, nif, birth_date, direction):
+    def __init__(self, id, first_name, last_name, nif, birth_date, direction, cards):
         self.id = id
         self.first_name = first_name
         self.last_name = last_name
@@ -169,6 +169,7 @@ class Customer:
         self.birth_date = birth_date
         self.creation_date = datetime.datetime.now()
         self.direction = direction
+        self.cards = cards
 
 # TODO - ArielisGT
     def __str__(self):
@@ -214,7 +215,8 @@ class Direction:
 # Crear Direction y customer y asociarlos - Evaristo
 fecha_nacimiento = datetime.date(1970, 12, 1)
 direccion_jose = Direction(1, 'luna', 28100, 'Alcobendas', 'España')
-jose = Customer(1, 'Jose', 'Perez', '7777777B', fecha_nacimiento, direccion_jose)
+cards1 = []
+jose = Customer(1, 'Jose', 'Perez', '7777777B', fecha_nacimiento, direccion_jose, cards1)
 print(direccion_jose)
 print(jose)
 
@@ -224,7 +226,6 @@ print(jose)
 # TODO - Crear lista de productos a partir de los 3 productos anteriores y crear ShopCart con esa lista de productos
 
 class CreditCard:
-
     def __init__(self, id, titular, number, expiration_date, ccv):
         self.id = id
         self.titular = titular
@@ -243,25 +244,9 @@ class CreditCard:
     def __repr__(self):
         return self.__str__()
 
-class Store:
-    def __init__(self, id, name, products, customers, street, country):
-        self.id = id
-        self.name = name
-        self.products = products
-        self.customers = customers
-        self.street = street
-        self.country = country
-
-    def datos(self):
-        print("Tienda " + str(self.id))
-        print("Nombre: " + self.name)
-        print("Ciudad: " + self.country)
-        print("Dirección: " + self.street.country)
-
-dim=Dimension(1,1.23,0.83,True)
-producto=Product(1,392,"Lavavajillas","Limpia platos, cubiertos, etc.","blanco",300,dim,True,"60% de descuento")
-dire1=Direction(1,"Calle Muñor Torrero",11100,"Cádiz","San Fernando")
-dire2=Direction(2,"Calle Carolina 27",20193,"VillaNorte","Salamanca")
-cliente=Customer(1,"Paco","Maestre",23450293,datetime.datetime(1990,3,17),dire1)
-tienda = Store(1, "Coviran", producto, cliente, dire2, "San Fernando")
-tienda.datos()
+visa1 = CreditCard(1, "Carlos López", "0001 0002 0003 4444", datetime.date(2022, 1, 31), 554)
+visa2 = CreditCard(2, "Manuel Pérez", "0001 0002 0003 5555", datetime.date(2024, 12, 15), 554)
+cards2 = [visa1, visa2]
+print("=========Cliente1===============")
+cliente1 = Customer(1, "Carlos", "López", "00000002E", datetime.date(1950, 1, 31), "Calle Falsa", [visa1, visa2])
+print(cliente1)
