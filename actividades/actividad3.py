@@ -128,7 +128,8 @@ class Dimension:
 
 # ------------------------------  AROA --------------------------------------------
 class Product:
-    def __init__(self, id, sku, name, description, color, price, dimension, digital, offer):
+
+    def __init__(self, id, sku, name, description, color, price, dimension, digital, category, offer):
         self.id = id
         self.sku = sku
         self.name = name
@@ -137,21 +138,40 @@ class Product:
         self.price = price
         self.dimension = dimension
         self.digital = digital
+        self.category = category
         self.offer = offer
 
- # nuevo
     def __str__(self):
+        return f"product(id{self.id}, " \
+            f"sku= {self.sku}, " \
+            f"name= {self.name}, " \
+            f"description= {self.description}, " \
+            f"color= {self.color}, " \
+            f"price= {self.price}, " \
+            f"dimension= {self.dimension}, " \
+            f"digital= {self.digital}, " \
+            f"category= {self.category}" \
+            f"offer= {self.offer}" \
+            f")"
 
-            return f"product(id{self.id}, " \
-                f"sku= {self.sku}, " \
-                f"name= {self.name}, " \
-                f"description= {self.description}, " \
-                f"color= {self.color}, " \
-                f"price= {self.price}, " \
-                f"dimension= {self.dimension}, " \
-                f"digital= {self.digital}, " \
-                f"offer= {self.offer}" \
-                f")"
+    # TODO - Aroita
+
+
+# TODO - class Category: id, name, color, creation_date  -- Ariel
+
+class Category:
+    def __init__(self, id, name, color, creation_date):
+        self.id = id
+        self.name = name
+        self.color = color
+        self.creation_date = creation_date
+
+    def __str__(self):
+        return f"Category(id={self.id}, " \
+               f"name= {self.name}, " \
+               f"color= {self.color}, " \
+               f"creation_date= {self.creation_date}, " \
+               f")"
 
     def __repr__(self):
         return self.__str__()
@@ -243,6 +263,19 @@ class CreditCard:
 
     def __repr__(self):
         return self.__str__()
+
+
+# TODO - Añadir el atributo category a la clase Product y crear objetos y asociarlos  -- Ariel
+#     class Category:
+#         def __init__(self, id, name, color, creation_date):
+#             self.id = id
+#             self.name = name
+#             self.color = color
+#             self.creation_date = creation_date
+
+category_books = Category(1, "Books", "white", datetime.date.today())
+category_computers = Category(2, "Computers", "green", datetime.date.today())
+
 
 visa1 = CreditCard(1, "Carlos López", "0001 0002 0003 4444", datetime.date(2022, 1, 31), 554)
 visa2 = CreditCard(2, "Manuel Pérez", "0001 0002 0003 5555", datetime.date(2024, 12, 15), 554)
