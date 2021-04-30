@@ -103,7 +103,23 @@ class Customer:
         self.creation_date = datetime.datetime.now()
         self.direction = direction
 
-        # TODO - ArielisGT
+# TODO - ArielisGT
+        def __str__(self):
+            """
+            Método especial para obtener una representación textual del objeto
+            :return:
+            """
+            return f"Customer(id={self.id}, " \
+                   f"first_name= {self.first_name}, " \
+                   f"last_name= {self.last_name}, " \
+                   f"nif= {self.nif}, " \
+                   f"birth_date= {self.birth_date}, " \
+                   f"creation_date= {self.creation_date}, " \
+                   f"direction= {self.direction}, " \
+                   f")"
+
+        def __repr__(self):
+            return self.__str__()
 
 
 class Direction:
