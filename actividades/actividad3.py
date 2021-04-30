@@ -52,6 +52,12 @@ A continuación se instanciarán tres productos, que con la información de
 cual presentaremos por consola.
 
 Para una correcta visualización a través de la consola implementaremos el método string en cada una de las clases.
+
+TODO - class CreditCard: id, titular, numero, fecha expiracion, ccv -- Dani Perez
+TODO - class Store: id, name, products   -
+TODO - class Order: id, customer, shopcart, creation_date  - salasPMJ
+TODO - class Category: id, name  --
+
 """
 import datetime
 
@@ -90,7 +96,7 @@ class Dimension:
 
 
 class Product:
-    def __init__(self, id, sku, name, description, color, price, dimension, digital, peso):
+    def __init__(self, id, sku, name, description, color, price, dimension, digital):
         self.id = id
         self.sku = sku
         self.name = name
@@ -99,7 +105,19 @@ class Product:
         self.price = price
         self.dimension = dimension
         self.digital = digital
-        self.peso = peso     # nuevo
+
+ # nuevo
+def __str__(self):
+
+    return f"product(id{self.id}, " \
+           f"sku= {self.sku}, " \
+           f"name= {self.name}, " \
+           f"description= {self.description}, " \
+           f"color= {self.color}, " \
+           f"price= {self.price}, " \
+           f"dimension= {self.dimension}, " \
+           f"digital= {self.digital}, " \
+           f")"
 
         # TODO - Aroita
 
