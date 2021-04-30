@@ -52,6 +52,12 @@ A continuación se instanciarán tres productos, que con la información de
 cual presentaremos por consola.
 
 Para una correcta visualización a través de la consola implementaremos el método string en cada una de las clases.
+
+TODO - class CreditCard: id, titular, numero, fecha expiracion, ccv -- Dani Perez
+TODO - class Store: id, name, products   -
+TODO - class Order: id, customer, shopcart, creation_date  - salasPMJ
+TODO - class Category: id, name  --
+
 """
 import datetime
 
