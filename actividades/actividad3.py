@@ -200,6 +200,7 @@ class Customer:
                f"birth_date= {self.birth_date}, " \
                f"creation_date= {self.creation_date}, " \
                f"direction= {self.direction}, " \
+               f"cards= {self.cards} " \
                f")"
 
     def __repr__(self):
