@@ -140,6 +140,9 @@ class Direction:
 # Asociaciones
 
 # TODO - Crear Direction y customer y asociarlos - Evaristo
+direccion_jose = Direction(1, 'luna', 28100, 'Alcobendas', 'España')
+jose = Customer(1, 'Jose', 'Perez', '7777777B', '1970-12-1', direccion_jose)
+
 
 # TODO - Crear 3 Dimension y 3 Product y asociarlos
 
