@@ -156,7 +156,6 @@ class Product:
 
     # TODO - Aroita
 
-
 # TODO - class Category: id, name, color, creation_date  -- Ariel
 
 class Category:
@@ -298,6 +297,20 @@ class Store:
         print("Nombre: " + self.name)
         print("Ciudad: " + self.country)
         print("Dirección: " + self.street.country)
+
+
+
+# ---- crear objetos ----
+productos = Product(1,
+                    21,
+                    "Msi_prestig",
+                    "pepinazo...",
+                    "rosa",
+                    1459,
+                    "16 pulgadas",
+                    "físico"
+                    )
+print(productos)
 
 dim=Dimension(1,1.25,0.83,True)
 producto=Product(1,392,"Lavavajillas","Limpia platos, cubiertos, etc.","blanco",300,dim,True,"60% de descuento")
