@@ -65,6 +65,8 @@ class ShopCart:
         self.customer = customer
         self.creation_date = datetime.datetime.now()
 
+        # TODO - @Leticia-Orive
+
 
 class Dimension:
     def __init__(self, id, height=0.0, width=0.0, weight=0.0, fragile=False):
