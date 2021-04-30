@@ -52,6 +52,14 @@ A continuación se instanciarán tres productos, que con la información de
 cual presentaremos por consola.
 
 Para una correcta visualización a través de la consola implementaremos el método string en cada una de las clases.
+
+TODO - class CreditCard: id, titular, numero, fecha expiracion, ccv -- Dani Perez
+TODO - class Store: id, name, products   -
+TODO - class Order: id, customer, shopcart, creation_date  - salasPMJ
+TODO - class Category: id, name, color, creation_date  -- Ariel
+TODO - Añadir el atributo category a la clase Product y crear objetos y asociarlos  -- Ariel
+
+
 """
 import datetime
 
@@ -64,6 +72,16 @@ class ShopCart:
         self.product = products
         self.customer = customer
         self.creation_date = datetime.datetime.now()
+
+    def __str__(self):
+        return f"ShopCart(id={self.id}, " \
+                f"products= {self.product}, " \
+                f"customer= {self.customer}, " \
+                f"creation_date= {self.creation_date}, " \
+                f")"
+
+    def __repr__(self):
+        return self.__str__()
 
         # TODO - @Leticia-Orive
 
@@ -131,12 +149,12 @@ class Customer:
         self.direction = direction
 
 # TODO - ArielisGT
-        def __str__(self):
-            """
+    def __str__(self):
+        """
             Método especial para obtener una representación textual del objeto
-            :return:
-            """
-            return f"Customer(id={self.id}, " \
+        :return:
+        """
+        return f"Customer(id={self.id}, " \
                    f"first_name= {self.first_name}, " \
                    f"last_name= {self.last_name}, " \
                    f"nif= {self.nif}, " \
@@ -145,8 +163,8 @@ class Customer:
                    f"direction= {self.direction}, " \
                    f")"
 
-        def __repr__(self):
-            return self.__str__()
+    def __repr__(self):
+        return self.__str__()
 
 
 class Direction:
@@ -179,3 +197,23 @@ jose = Customer(1, 'Jose', 'Perez', '7777777B', '1970-12-1', direccion_jose)
 # TODO - Crear 3 Dimension y 3 Product y asociarlos
 
 # TODO - Crear lista de productos a partir de los 3 productos anteriores y crear ShopCart con esa lista de productos
+
+class CreditCard:
+
+    def __init__(self, id, titular, number, expiration_date, ccv):
+        self.id = id
+        self.titular = titular
+        self.number = number
+        self.expiration_date = expiration_date
+        self.ccv = ccv
+
+    def __str__(self):
+        return f"CreditCard(id={self.id}, " \
+               f"titular= {self.titular}, " \
+               f"number= {self.number}, " \
+               f"expiration_date= {self.expiration_date}, " \
+               f"ccv= {self.ccv}" \
+               f")"
+
+    def __repr__(self):
+        return self.__str__()
