@@ -52,11 +52,38 @@ A continuación se instanciarán tres productos, que con la información de
 cual presentaremos por consola.
 
 Para una correcta visualización a través de la consola implementaremos el método string en cada una de las clases.
+
+class CreditCard: id, titular, numero, fecha expiracion, ccv -- Dani Perez
+TODO - class Store: id, name, products, customers, street, country   -  Dani
+TODO - class Order: id, customer, shopcart, creation_date  - salasPMJ
+TODO - class Category: id, name, color, creation_date  -- Ariel
+TODO - Añadir el atributo category a la clase Product y crear objetos y asociarlos  -- Ariel
+TODO - Dani Perez - En la clase customer añadir un atributo lista para objetos de la clase CreditCard. Probar a crear objetos y asociarlos
+class Offer - id, name, init_date, finish_date, discount - @alansastre
 """
 import datetime
 
 
 # Creación de clases:
+class Offer:
+    def __init__(self, id, name, init_date, finish_date, discount):
+        self.id = id
+        self.name = name
+        self.init_date = init_date
+        self.finish_date = finish_date
+        self.creation_date = datetime.datetime.now()
+        self.discount = discount
+
+    def __str__(self):
+        return f"Offer(id={self.id}, " \
+                f"name= {self.name}, " \
+                f"init_date= {self.init_date}, " \
+                f"finish_date= {self.finish_date}, " \
+                f"discount= {self.discount}" \
+                f")"
+
+    def __repr__(self):
+        return self.__str__()
 
 class ShopCart:
 
@@ -66,7 +93,18 @@ class ShopCart:
         self.customer = customer
         self.creation_date = datetime.datetime.now()
 
+    def __str__(self):
+        return f"ShopCart(id={self.id}, " \
+                f"products= {self.product}, " \
+                f"customer= {self.customer}, " \
+                f"creation_date= {self.creation_date}, " \
+                f")"
+
+    def __repr__(self):
+        return self.__str__()
+
         # TODO - @Leticia-Orive
+
 
 class Dimension:
     def __init__(self, id, height=0.0, width=0.0, weight=0.0, fragile=False):
@@ -87,10 +125,10 @@ class Dimension:
     def __repr__(self):
         return self.__str__()
 
-dim=Dimension(1,1.23,0.83,True)
 
+# ------------------------------  AROA --------------------------------------------
 class Product:
-    def __init__(self, id, sku, name, description, color, price, dimension, digital):
+    def __init__(self, id, sku, name, description, color, price, dimension, digital, offer):
         self.id = id
         self.sku = sku
         self.name = name
@@ -99,21 +137,57 @@ class Product:
         self.price = price
         self.dimension = dimension
         self.digital = digital
+        self.offer = offer
 
-# nuevo
+ # nuevo
     def __str__(self):
-        return f"product(id{self.id}, " \
-           f"sku= {self.sku}, " \
-           f"name= {self.name}, " \
-           f"description= {self.description}, " \
-           f"color= {self.color}, " \
-           f"price= {self.price}, " \
-           f"dimension= {self.dimension}, " \
-           f"digital= {self.digital}, " \
-           f")"
 
-    # TODO - Aroita
-producto=Product(1,392,"Lavavajillas","Limpia platos, cubiertos, etc.","blanco",300,dim,True)
+            return f"product(id{self.id}, " \
+                f"sku= {self.sku}, " \
+                f"name= {self.name}, " \
+                f"description= {self.description}, " \
+                f"color= {self.color}, " \
+                f"price= {self.price}, " \
+                f"dimension= {self.dimension}, " \
+                f"digital= {self.digital}, " \
+                f"offer= {self.offer}" \
+                f")"
+
+    def __repr__(self):
+        return self.__str__()
+
+
+# TODO - Aroita  ----------------------------------------------------------------
+
+
+class Customer:
+    def __init__(self, id, first_name, last_name, nif, birth_date, direction):
+        self.id = id
+        self.first_name = first_name
+        self.last_name = last_name
+        self.nif = nif
+        self.birth_date = birth_date
+        self.creation_date = datetime.datetime.now()
+        self.direction = direction
+
+# TODO - ArielisGT
+    def __str__(self):
+        """
+            Método especial para obtener una representación textual del objeto
+        :return:
+        """
+        return f"Customer(id={self.id}, " \
+                   f"first_name= {self.first_name}, " \
+                   f"last_name= {self.last_name}, " \
+                   f"nif= {self.nif}, " \
+                   f"birth_date= {self.birth_date}, " \
+                   f"creation_date= {self.creation_date}, " \
+                   f"direction= {self.direction}, " \
+                   f")"
+
+    def __repr__(self):
+        return self.__str__()
+
 
 class Direction:
     def __init__(self, id, street, postal_code, province, country):
@@ -133,63 +207,38 @@ class Direction:
 
     def __repr__(self):
         return self.__str__()
-dire1=Direction(1,"Calle Muñor Torrero",11100,"Cádiz","San Fernando")
-dire2=Direction(2,"Calle Carolina 27",20193,"VillaNorte","Salamanca")
 
-class Customer:
-    def __init__(self, id, first_name, last_name, nif, birth_date, direction):
-        self.id = id
-        self.first_name = first_name
-        self.last_name = last_name
-        self.nif = nif
-        self.birth_date = birth_date
-        self.creation_date = datetime.datetime.now()
-        self.direction = direction
-
-        # TODO - ArielisGT
-        def __str__(self):
-            """
-            Método especial para obtener una representación textual del objeto
-            :return:
-            """
-            return f"Customer(id={self.id}, " \
-                   f"first_name= {self.first_name}, " \
-                   f"last_name= {self.last_name}, " \
-                   f"nif= {self.nif}, " \
-                   f"birth_date= {self.birth_date}, " \
-                   f"creation_date= {self.creation_date}, " \
-                   f"direction= {self.direction}, " \
-                   f")"
-
-        def __repr__(self):
-            return self.__str__()
-cliente=Customer(1,"Paco","Maestre",23450293,datetime.datetime(1990,3,17),dire1)
 
 # Asociaciones
 
-# TODO - Crear Direction y customer y asociarlos - Evaristo
+# Crear Direction y customer y asociarlos - Evaristo
+fecha_nacimiento = datetime.date(1970, 12, 1)
 direccion_jose = Direction(1, 'luna', 28100, 'Alcobendas', 'España')
-jose = Customer(1, 'Jose', 'Perez', '7777777B', '1970-12-1', direccion_jose)
+jose = Customer(1, 'Jose', 'Perez', '7777777B', fecha_nacimiento, direccion_jose)
+print(direccion_jose)
+print(jose)
 
 
 # TODO - Crear 3 Dimension y 3 Product y asociarlos
 
 # TODO - Crear lista de productos a partir de los 3 productos anteriores y crear ShopCart con esa lista de productos
 
-class Store:
-    def __init__(self, id, name, products, customers, street, country):
+class CreditCard:
+
+    def __init__(self, id, titular, number, expiration_date, ccv):
         self.id = id
-        self.name = name
-        self.products = products
-        self.customers = customers
-        self.street = street
-        self.country = country
+        self.titular = titular
+        self.number = number
+        self.expiration_date = expiration_date
+        self.ccv = ccv
 
-    def datos(self):
-        print("Tienda " + str(self.id))
-        print("Nombre: " + self.name)
-        print("Ciudad: " + self.country)
-        print("Dirección: " + self.street.country)
+    def __str__(self):
+        return f"CreditCard(id={self.id}, " \
+               f"titular= {self.titular}, " \
+               f"number= {self.number}, " \
+               f"expiration_date= {self.expiration_date}, " \
+               f"ccv= {self.ccv}" \
+               f")"
 
-tienda = Store(2, "Coviran", producto, cliente, dire2, "San Fernando")
-tienda.datos()
+    def __repr__(self):
+        return self.__str__()
