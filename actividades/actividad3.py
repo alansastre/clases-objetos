@@ -190,8 +190,9 @@ class Direction:
 # Asociaciones
 
 # Crear Direction y customer y asociarlos - Evaristo
+fecha_nacimiento = datetime.date(1970, 12, 1)
 direccion_jose = Direction(1, 'luna', 28100, 'Alcobendas', 'España')
-jose = Customer(1, 'Jose', 'Perez', '7777777B', '1970-12-1', direccion_jose)
+jose = Customer(1, 'Jose', 'Perez', '7777777B', fecha_nacimiento, direccion_jose)
 print(direccion_jose)
 print(jose)
 
