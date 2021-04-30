@@ -56,7 +56,9 @@ Para una correcta visualización a través de la consola implementaremos el mét
 TODO - class CreditCard: id, titular, numero, fecha expiracion, ccv -- Dani Perez
 TODO - class Store: id, name, products   -
 TODO - class Order: id, customer, shopcart, creation_date  - salasPMJ
-TODO - class Category: id, name  --
+TODO - class Category: id, name, color, creation_date  -- Ariel
+TODO - Añadir el atributo category a la clase Product y crear objetos y asociarlos  -- Ariel
+
 
 """
 import datetime
