@@ -56,12 +56,11 @@ Para una correcta visualización a través de la consola implementaremos el mét
 TODO - class CreditCard: id, titular, numero, fecha expiracion, ccv -- Dani Perez
 TODO - class Store: id, name, products   -
 TODO - class Order: id, customer, shopcart, creation_date  - salasPMJ
-TODO - class Category: id, name, color, creation_date  -- Ariel
-TODO - Añadir el atributo category a la clase Product y crear objetos y asociarlos  -- Ariel
 
 
 """
 import datetime
+
 
 # Creación de clases:
 
@@ -75,10 +74,10 @@ class ShopCart:
 
     def __str__(self):
         return f"ShopCart(id={self.id}, " \
-                f"products= {self.product}, " \
-                f"customer= {self.customer}, " \
-                f"creation_date= {self.creation_date}, " \
-
+               f"products= {self.product}, " \
+               f"customer= {self.customer}, " \
+               f"creation_date= {self.creation_date}, " \
+ \
     def __repr__(self):
         return self.__str__()
 
@@ -105,9 +104,10 @@ class Dimension:
         return self.__str__()
 
 
-
 class Product:
-    def __init__(self, id, sku, name, description, color, price, dimension, digital):
+    category_offers = "Last Offers"
+
+    def __init__(self, id, sku, name, description, color, price, dimension, digital, category):
         self.id = id
         self.sku = sku
         self.name = name
@@ -116,10 +116,11 @@ class Product:
         self.price = price
         self.dimension = dimension
         self.digital = digital
+        self.category = category
 
- # nuevo
+
+# nuevo
 def __str__(self):
-
     return f"product(id{self.id}, " \
            f"sku= {self.sku}, " \
            f"name= {self.name}, " \
@@ -130,7 +131,27 @@ def __str__(self):
            f"digital= {self.digital}, " \
            f")"
 
-        # TODO - Aroita
+    # TODO - Aroita
+
+
+# TODO - class Category: id, name, color, creation_date  -- Ariel
+
+class Category:
+    def __init__(self, id, name, color, creation_date):
+        self.id = id
+        self.name = name
+        self.color = color
+        self.creation_date = datetime.datetime.now()
+
+    def __str__(self):
+        return f"Category(id={self.id}, " \
+               f"name= {self.name}, " \
+               f"color= {self.color}, " \
+               f"creation_date= {self.creation_date}, " \
+               f")"
+
+    def __repr__(self):
+        return self.__str__()
 
 
 class Customer:
@@ -143,20 +164,20 @@ class Customer:
         self.creation_date = datetime.datetime.now()
         self.direction = direction
 
-# TODO - ArielisGT
+    # TODO - ArielisGT
     def __str__(self):
         """
             Método especial para obtener una representación textual del objeto
         :return:
         """
         return f"Customer(id={self.id}, " \
-                   f"first_name= {self.first_name}, " \
-                   f"last_name= {self.last_name}, " \
-                   f"nif= {self.nif}, " \
-                   f"birth_date= {self.birth_date}, " \
-                   f"creation_date= {self.creation_date}, " \
-                   f"direction= {self.direction}, " \
-                   f")"
+               f"first_name= {self.first_name}, " \
+               f"last_name= {self.last_name}, " \
+               f"nif= {self.nif}, " \
+               f"birth_date= {self.birth_date}, " \
+               f"creation_date= {self.creation_date}, " \
+               f"direction= {self.direction}, " \
+               f")"
 
     def __repr__(self):
         return self.__str__()
@@ -212,3 +233,16 @@ class CreditCard:
 
     def __repr__(self):
         return self.__str__()
+
+
+# TODO - Añadir el atributo category a la clase Product y crear objetos y asociarlos  -- Ariel
+#     class Category:
+#         def __init__(self, id, name, color, creation_date):
+#             self.id = id
+#             self.name = name
+#             self.color = color
+#             self.creation_date = creation_date
+
+category_offers = (1, "Offers", "red", datetime.date.now())
+category_books = (2, "Books", "white", datetime.date.now())
+category_computers= (3, "Computers", "green", datetime.date.now())
