@@ -204,7 +204,6 @@ class Customer:
                    f"birth_date= {self.birth_date}, " \
                    f"creation_date= {self.creation_date}, " \
                    f"direction= {self.direction}, " \
-                   f"cards= {self.cards} " \
                    f")"
 
     def __repr__(self):
@@ -279,10 +278,31 @@ category_computers = Category(2, "Computers", "green", datetime.date.today())
 
 
 visa1 = CreditCard(1, "Carlos López", "0001 0002 0003 4444", datetime.date(2022, 1, 31), 554)
-visa2 = CreditCard(2, "Carlos López", "0001 0002 0003 5555", datetime.date(2024, 12, 15), 555)
+visa2 = CreditCard(2, "Manuel Pérez", "0001 0002 0003 5555", datetime.date(2024, 12, 15), 554)
 cards2 = [visa1, visa2]
-print("=========Cards2===============")
-print(cards2)
 print("=========Cliente1===============")
 cliente1 = Customer(1, "Carlos", "López", "00000002E", datetime.date(1950, 1, 31), "Calle Falsa", [visa1, visa2])
 print(cliente1)
+
+class Store:
+    def __init__(self, id, name, products, customers, street, country):
+        self.id = id
+        self.name = name
+        self.products = products
+        self.customers = customers
+        self.street = street
+        self.country = country
+
+    def datos(self):
+        print("Tienda " + str(self.id))
+        print("Nombre: " + self.name)
+        print("Ciudad: " + self.country)
+        print("Dirección: " + self.street.country)
+
+dim=Dimension(1,1.25,0.83,True)
+producto=Product(1,392,"Lavavajillas","Limpia platos, cubiertos, etc.","blanco",300,dim,True,"Limpieza","60% de descuento")
+dire1=Direction(1,"Calle Muñor Torrero",11100,"Cádiz","San Fernando")
+dire2=Direction(2,"Calle Carolina 27",20193,"VillaNorte","Salamanca",visa1)
+cliente=Customer(1,"Paco","Maestre",23450293,datetime.datetime(1990,3,17),dire1)
+tienda = Store(1, "Coviran", producto, cliente, dire2, "San Fernando")
+tienda.datos()
