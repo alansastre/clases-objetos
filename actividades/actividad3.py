@@ -80,7 +80,7 @@ class Dimension:
 
 
 class Product:
-    def __init__(self, id, sku, name, description, color, price, dimension, digital):
+    def __init__(self, id, sku, name, description, color, price, dimension, digital, peso):
         self.id = id
         self.sku = sku
         self.name = name
@@ -89,6 +89,7 @@ class Product:
         self.price = price
         self.dimension = dimension
         self.digital = digital
+        self.peso = peso     # nuevo
 
         # TODO - Aroita
 
