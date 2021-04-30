@@ -181,3 +181,23 @@ jose = Customer(1, 'Jose', 'Perez', '7777777B', '1970-12-1', direccion_jose)
 # TODO - Crear 3 Dimension y 3 Product y asociarlos
 
 # TODO - Crear lista de productos a partir de los 3 productos anteriores y crear ShopCart con esa lista de productos
+
+class CreditCard:
+
+    def __init__(self, id, titular, number, expiration_date, ccv):
+        self.id = id
+        self.titular = titular
+        self.number = number
+        self.expiration_date = expiration_date
+        self.ccv = ccv
+
+    def __str__(self):
+        return f"CreditCard(id={self.id}, " \
+               f"titular= {self.titular}, " \
+               f"number= {self.number}, " \
+               f"expiration_date= {self.expiration_date}, " \
+               f"ccv= {self.ccv}" \
+               f")"
+
+    def __repr__(self):
+        return self.__str__()
