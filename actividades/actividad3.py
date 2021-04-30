@@ -120,3 +120,7 @@ class Direction:
 # Asociaciones
 
 # TODO - Crear Direction y customer y asociarlos - Evaristo
+
+# TODO - Crear 3 Dimension y 3 Product y asociarlos
+
+# TODO - Crear lista de productos a partir de los 3 productos anteriores y crear ShopCart con esa lista de productos
