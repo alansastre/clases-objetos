@@ -300,7 +300,7 @@ class Store:
 
 
 
-# ---- crear objetos ----
+# ---- crear objetos --
 productos = Product(1,
                     21,
                     "Msi_prestig",
